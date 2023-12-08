@@ -1,3 +1,5 @@
 import './style.css'
+import App from './App/App.js'
 
-console.log('Hello World')
+
+const app = new App();

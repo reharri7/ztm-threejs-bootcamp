@@ -134,3 +134,9 @@ package-lock.json
 
 # MAC OS Generated files
 .DS_Store
+/.idea/jpa-buddy.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/aws.xml
+/.idea/ztm-threejs-bootcamp.iml
