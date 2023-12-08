@@ -140,3 +140,5 @@ package-lock.json
 /.idea/vcs.xml
 /.idea/aws.xml
 /.idea/ztm-threejs-bootcamp.iml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/git_toolbox_prj.xml
