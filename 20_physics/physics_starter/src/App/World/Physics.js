@@ -80,6 +80,7 @@ export default class Physics {
     this.rigidBody.setRotation(worldRotation);
 
     this.meshMap.set(mesh, this.rigidBody);
+    return this.rigidBody;
   }
 
   /**
