@@ -27,6 +27,6 @@ export default class World {
 
   loop(deltaTime, elapsedTime) {
     this.physics.loop();
-    if(this.character) this.character.loop(deltaTime);
+    if(this.character) this.character.loop();
   }
 }

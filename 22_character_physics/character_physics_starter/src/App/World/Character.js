@@ -50,18 +50,35 @@ export default class Character {
     );
     this.rigidBody.setTranslation(worldPosition);
     this.rigidBody.setRotation(worldRotation);
+
+    this.characterController = this.physics.world.createCharacterController(0.01);
+    this.characterController.setApplyImpulsesToDynamicBodies(true);
+    this.characterController.enableAutostep(3, 0.1, false);
+    this.characterController.enableSnapToGround(1);
   }
 
-  loop() {
-
+  loop(deltaTime) {
+  const movement = new THREE.Vector3();
     if (this.forward) {
+      movement.z = -1;
     }
     if (this.backward) {
+      movement.z = 1;
     }
     if (this.left) {
+      movement.x = -1;
     }
     if (this.right) {
+      movement.x = 1;
     }
+
+    movement.normalize().multiplyScalar(deltaTime * 25);
+    movement.y = -1;
+    this.characterController.computeColliderMovement(this.collider, movement);
+
+    const newPosition = new THREE.Vector3().copy(this.rigidBody.translation()).add(this.characterController.computedMovement());
+    this.rigidBody.setNextKinematicTranslation(newPosition);
+    this.character.position.copy(this.rigidBody.translation());
 
   }
 }
